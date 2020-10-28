@@ -34,6 +34,16 @@ public class Sample8Task {
 
     @Test
     public void styleChecks() throws Exception {
+
+
+        WebElement h1 = driver.findElement(By.className("w3-jumbo"));
+        ///html/body/div[3]/div[1]/div/h2/a
+        WebElement sec1 = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div"));
+        WebElement sec2 = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div"));
+        assertEquals("rgba(255, 221, 221, 1)", sec1.getCssValue("background-color"));
+        assertEquals("rgba(255, 255, 204, 1)", sec2.getCssValue("background-color"));
+        assertEquals("64px", h1.getCssValue("font-size"));
+
 //         TODO:
 //        check the background of top 2 sections
 //        rgba(255, 221, 221, 1);

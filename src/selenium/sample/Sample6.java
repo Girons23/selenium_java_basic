@@ -28,13 +28,14 @@ public class Sample6 {
     public void endingTests() throws Exception {
         driver.quit();
     }
-
+//
     @Test
     public void findElementById() throws Exception {
 //        find element by id using xPath
         System.out.println("Find element by id using xPath:");
         System.out.println("\t text of element with id 'heading_1' is '" +
                 driver.findElement(By.xpath("//*[@id='heading_1']")).getText() + "'");
+        //*[@id="heading_1"]
         System.out.println("\t text of element with id 'standartText' is '" +
                 driver.findElement(By.xpath("//*[@id='standartText']")).getText() + "'");
         System.out.println("\t text of element with id 'nonStandartText' is '" +

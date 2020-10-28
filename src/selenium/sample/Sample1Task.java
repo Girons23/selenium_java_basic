@@ -12,9 +12,18 @@ public class Sample1Task {
     public void goToHomepage() throws Exception {
 //        TODO:
 //         define driver
+        System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://google.com");
 //         go to https://kristinek.github.io/site/index2.html
-//         get title of page
+        driver.get("https://kristinek.github.io/site/index2.html");
+        /* get title of page */
+        System.out.println(driver.getTitle());
 //         get URL of current page
+        System.out.println(driver.getCurrentUrl());
 //         close browser
+        Thread.sleep(3000);
+        driver.quit();
     }
 }
+

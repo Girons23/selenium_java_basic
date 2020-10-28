@@ -16,8 +16,9 @@ public class Sample1 {
         WebDriver driver = new ChromeDriver();
 
         //open test homepage
-        driver.get("https://google.com");
-        driver.get("https://kristinek.github.io/site/");
+       driver.get("https://google.com");
+       driver.get("https://kristinek.github.io/site/");
+       driver.findElement(By.xpath("//input[aria-label = 'Search']")).sendKeys("Some text");
         System.out.println(driver.findElement(By.id("h1")).getText());
         //get title of page
         System.out.println(driver.getTitle());

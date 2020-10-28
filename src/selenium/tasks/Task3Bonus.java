@@ -3,7 +3,9 @@ package selenium.tasks;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 //import pages.FormPage;
@@ -24,7 +26,7 @@ public class Task3Bonus {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://kristinek.github.io/sitetasks/list_of_people");
+        driver.get("https://kristinek.github.io/site/tasks/list_of_people");
     }
 
     @After
@@ -34,9 +36,24 @@ public class Task3Bonus {
 
     @Test
     public void addPerson() {
+
+        WebElement addPerson =driver.findElement(By.xpath("//*[@id=\"addPersonBtn\"]"));
+        addPerson.click();
+        WebElement name =driver.findElement(By.xpath("//*[@id=\"name\"]"));
+        WebElement surname =driver.findElement(By.xpath("//*[@id=\"surname\"]"));
+        WebElement job =driver.findElement(By.xpath("//*[@id=\"job\"]"));
+        WebElement date =driver.findElement(By.xpath("//*[@id=\"dob\"]"));
+        WebElement male =driver.findElement(By.xpath("//*[@id=\"male\"]"));
+        WebElement status =driver.findElement(By.xpath("//*[@id=\"status\"]"));
+        WebElement addButton =driver.findElement(By.xpath("//*[@id=\"modal_button\"]"));
+        name.sendKeys("Vin");
+        surname.sendKeys("Diesel");
+        job.sendKeys("Actor");
+        date.sendKeys("07/18/1967");
+        addButton.click();
+
         /* TODO:
          * implement adding new person using page object
-         *
          * in order: store the list of people and jobs currently on page
          * add a person via "Add person button"
          * check the list again, that non of the people where changes, but an additional one with correct name/job was added
